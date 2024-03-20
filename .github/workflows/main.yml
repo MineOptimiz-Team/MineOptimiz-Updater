@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  Fabric-1.20.1:
+  Fabric-1201:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v2
