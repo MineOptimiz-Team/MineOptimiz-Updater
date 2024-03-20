@@ -2,8 +2,8 @@
 echo "请确保在更新时关闭了Minecraft"
 echo "如果在更新时窗口突然退出，则可能是更新失败"
 echo "正在下载更新包中..."
-wget $devdownloadlink -O Update.zip || exit 1
-#此处$devdownloadlink填写一个可以自动更新的测试版整合包下载直链
+wget devdownloadlink -O Update.zip || exit 1
+#此处devdownloadlink填写一个可以自动更新的测试版整合包下载直链
 echo "正在解压更新包..."
 unzip Update.zip
 rm Update.zip

@@ -22,8 +22,8 @@ jobs:
         run: |
           sed -i "s~%stabledownloadlink%~https://nightly.link/SmallMushroom-offical/MineOptimiz-Next/workflows/main/1.20.1~g" Update.bat
           sed -i "s~%devdownloadlink%~https://nightly.link/SmallMushroom-offical/MineOptimiz-Next/workflows/main/1.20.1-Dev~g" Update.bat
-          sed -i "s~$devdownloadlink~https://nightly.link/SmallMushroom-offical/MineOptimiz-Next/workflows/main/1.20.1-Dev~g" ./config/fancymenu/assets/Update/update-dev.sh
-          sed -i "s~$stabledownloadlink~https://nightly.link/SmallMushroom-offical/MineOptimiz-Next/workflows/main/1.20.1~g" ./config/fancymenu/assets/Update/update-stable.sh
+          sed -i "s~devdownloadlink~https://nightly.link/SmallMushroom-offical/MineOptimiz-Next/workflows/main/1.20.1-Dev~g" ./config/fancymenu/assets/Update/update-dev.sh
+          sed -i "s~stabledownloadlink~https://nightly.link/SmallMushroom-offical/MineOptimiz-Next/workflows/main/1.20.1~g" ./config/fancymenu/assets/Update/update-stable.sh
       - name: Upload Updater-on-Windows
         uses: actions/upload-artifact@v2
         with:
