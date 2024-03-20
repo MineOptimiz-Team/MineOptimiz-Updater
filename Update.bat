@@ -59,6 +59,8 @@ echo 正在下载非内置组件
 .\guirequired\Update\aria2\aria2c.exe -o .\mods\notenoughanimations-fabric-1.7.1-mc1.20.1.jar https://cdn.modrinth.com/data/MPCX6s5C/versions/YbSMjtFY/notenoughanimations-fabric-1.7.1-mc1.20.1.jar
 .\guirequired\Update\aria2\aria2c.exe -o .\config\fancymenu\assets\Update\update-dev.sh https://mirror.ghproxy.com/https://github.com/SmallMushroom-offical/MineOptimiz-Updater/releases/download/v1.0.1/update-1.20.1-dev.sh
 .\guirequired\Update\aria2\aria2c.exe -o .\config\fancymenu\assets\Update\update-stable.sh https://mirror.ghproxy.com/https://github.com/SmallMushroom-offical/MineOptimiz-Updater/releases/download/v1.0.1/update-1.20.1-stable.sh
+.\guirequired\Update\aria2\aria2c.exe -o .\mods\viafabricplus-2.8.7.jar https://cdn.modrinth.com/data/rIC2XJV4/versions/MZzBB2Tu/viafabricplus-2.8.7.jar
+.\guirequired\Update\aria2\aria2c.exe -o .\mods\voicechat-fabric-1.20.1-2.5.9.jar https://cdn.modrinth.com/data/9eGKb6K1/versions/blva78z9/voicechat-fabric-1.20.1-2.5.9.jar
 if errorlevel 1 (
   echo 下载失败！
   pause
