@@ -27,7 +27,7 @@ wget https://cdn.modrinth.com/data/Wq5SjeWM/versions/r2jmO7md/fancymenu_fabric_3
 wget https://mirror.ghproxy.com/https://github.com/tr7zw/EntityCulling/releases/download/1.6.2-1.20/entityculling-fabric-1.6.2-mc1.20.jar -O ./mods/entityculling-fabric-1.6.2-mc1.20.jar || exit 1
 wget https://cdn.modrinth.com/data/MPCX6s5C/versions/YbSMjtFY/notenoughanimations-fabric-1.7.1-mc1.20.1.jar -O ./mods/notenoughanimations-fabric-1.7.1-mc1.20.1.jar || exit 1
 wget https://cdn.modrinth.com/data/rIC2XJV4/versions/MZzBB2Tu/viafabricplus-2.8.7.jar -O ./mods/viafabricplus-2.8.7.jar
-wget https://cdn.modrinth.com/data/9eGKb6K1/versions/blva78z9/voicechat-fabric-1.20.1-2.5.9.jar -O ,/mods/voicechat-fabric-1.20.1-2.5.9.jar
+wget https://cdn.modrinth.com/data/9eGKb6K1/versions/blva78z9/voicechat-fabric-1.20.1-2.5.9.jar -O ./mods/voicechat-fabric-1.20.1-2.5.9.jar
 echo "下载完成"
 echo "正在删除缓存..."
 rm Update.zip || echo "删除失败！下次更新可能会出问题！"
