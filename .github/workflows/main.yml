@@ -4,47 +4,6 @@ on:
  workflow_dispatch:
 
 jobs:
-  Fabric-1201:
-    runs-on: ubuntu-22.04
-    steps:
-      - uses: actions/checkout@v2
-
-      - run: git config user.email "${{ github.actor }}@users.noreply.github.com"
-        if: ${{ github.repository_owner != 'github-actions' }}
-
-      - run: git config user.name "${{ github.actor }}"
-        if: ${{ github.repository_owner != 'github-actions' }}   
-
-      - name: Apply Download Link
-        run: |
-          sed -i "s~%stabledownloadlink%~https://nightly.link/SmallMushroom-offical/MineOptimiz-Next/workflows/main/1.20.1~g" Update.bat
-          sed -i "s~%devdownloadlink%~https://nightly.link/SmallMushroom-offical/MineOptimiz-Next/workflows/main/1.20.1-Dev~g" Update.bat
-          sed -i "s~devdownloadlink~https://nightly.link/SmallMushroom-offical/MineOptimiz-Next/workflows/main/1.20.1-Dev~g" ./config/fancymenu/assets/Update/update-dev.sh
-          sed -i "s~stabledownloadlink~https://nightly.link/SmallMushroom-offical/MineOptimiz-Next/workflows/main/1.20.1~g" ./config/fancymenu/assets/Update/update-stable.sh
-      - name: Upload Updater-on-Windows
-        uses: actions/upload-artifact@v2
-        with:
-          name: Update-1.20.1.bat
-          path: "./Update.bat"
-
-      - name: Upload Updater-setup
-        uses: actions/upload-artifact@v2
-        with:
-          name: Update-setup.sh
-          path: "./Update.sh"
-
-      - name: Upload update-dev.sh
-        uses: actions/upload-artifact@v2
-        with:
-          name: update-1.20.1-dev.sh
-          path: "./config/fancymenu/assets/Update/update-dev.sh"
-
-      - name: Upload update-stable.sh
-        uses: actions/upload-artifact@v2
-        with:
-          name: update-1.20.1-stable.sh
-          path: "./config/fancymenu/assets/Update/update-stable.sh"
-
   Forge-1201:
     runs-on: ubuntu-22.04
     steps:
