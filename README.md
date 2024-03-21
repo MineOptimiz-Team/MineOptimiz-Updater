@@ -1,6 +1,6 @@
 ## MineOptimiz Updater
 ## 这是什么？
-MineOptimiz的附加项目，用于下载和更新整合包，使用Shell脚本和Windows批处理文件编写
+[MineOptimiz](https://github.com/SmallMushroom-offical/MineOptimiz-Next)的附加项目，用于下载和更新整合包，使用Shell脚本和Windows批处理文件编写
 ## 我可以在自己的整合包使用它吗？
 当然，但不是最好的办法，不建议使用
 ## 如何使用它？
