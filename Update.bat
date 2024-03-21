@@ -9,9 +9,9 @@ if "%update%"=="3" exit
 echo 请确保Minecraft处于关闭状态
 echo 正在下载更新包
 if "%update%"=="1" .\guirequired\Update\aria2\aria2c.exe -o Update.zip %stabledownloadlink%
-#此处%stabledownloadlink%填写一个可自动更新的稳定版整合包下载链接
+rem 此处%stabledownloadlink%填写一个可自动更新的稳定版整合包下载链接
 if "%update%"=="2" .\guirequired\Update\aria2\aria2c.exe -o Update.zip %devdownloadlink%
-#此处%devdownloadlink%填写一个可自动更新的测试版整合包下载链接
+rem 此处%devdownloadlink%填写一个可自动更新的测试版整合包下载链接
 if errorlevel 1 (
   echo 下载失败！
   pause
