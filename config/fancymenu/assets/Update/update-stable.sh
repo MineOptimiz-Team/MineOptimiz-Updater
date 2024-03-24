@@ -12,7 +12,7 @@ unzip Update.zip -d ./Update || exit 1
 echo "正在删除旧的文件..."
 rm -rf ./config
 rm -rf ./CustomSkinLoader
-find ./mods -type f ! -name "exordium*" ! -name "enityculling*" ! -name "fancymenu*" ! -name "notenoughanimations*" ! -name "viafabricplus*" ! -name "voicechat*" ! -name "skinlayers3d*" -exec rm -f {} +
+find ./mods -type f ! -name "exordium*" ! -name "entityculling*" ! -name "fancymenu*" ! -name "notenoughanimations*" ! -name "viafabricplus*" ! -name "voicechat*" ! -name "skinlayers3d*" -exec rm -f {} +
 rm -rf ./resourcepacks
 echo "正在复制新的文件..."
 cp -r "./Update/overrides/config" ./ || exit 1
