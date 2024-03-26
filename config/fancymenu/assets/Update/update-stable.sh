@@ -22,6 +22,8 @@ cp -r "./Update/overrides/resourcepacks" ./ || exit 1
 echo "正在下载非内置的组件"
 wget https://mirror.ghproxy.com/https://github.com/SmallMushroom-offical/MineOptimiz-Updater/releases/download/v1.0.5/update-dev.sh -O ./config/fancymenu/assets/Update/update-dev.sh
 wget https://mirror.ghproxy.com/https://github.com/SmallMushroom-offical/MineOptimiz-Updater/releases/download/v1.0.5/update-stable.sh -O ./config/fancymenu/assets/Update/update-stable.sh
+wget https://mirror.ghproxy.com/https://github.com/SmallMushroom-offical/MineOptimiz-Updater/releases/download/v1.0.5/Update.sh -O ./Update.sh
+wget https://mirror.ghproxy.com/https://github.com/SmallMushroom-offical/MineOptimiz-Updater/releases/download/v1.0.5/Update.bat -O ./Update.bat
 #这一段是重新下载一遍Updater，建议在修改时删除
 echo "下载完成"
 echo "正在删除缓存..."
