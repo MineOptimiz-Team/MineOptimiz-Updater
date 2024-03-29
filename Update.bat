@@ -54,10 +54,10 @@ if errorlevel 1 (
 )
 echo 复制完成！
 echo 正在下载非内置组件
-.\guirequired\Update\aria2\aria2c.exe -o .\config\fancymenu\assets\Update\update-dev.sh https://mirror.ghproxy.com/https://github.com/SmallMushroom-offical/MineOptimiz-Updater/releases/download/v1.0.5/update-dev.sh
-.\guirequired\Update\aria2\aria2c.exe -o .\config\fancymenu\assets\Update\update-stable.sh https://mirror.ghproxy.com/https://github.com/SmallMushroom-offical/MineOptimiz-Updater/releases/download/v1.0.5/update-stable.sh
-.\guirequired\Update\aria2\aria2c.exe -o .\Update.sh https://mirror.ghproxy.com/https://github.com/SmallMushroom-offical/MineOptimiz-Updater/releases/download/v1.0.5/Update.sh
-.\guirequired\Update\aria2\aria2c.exe -o .\Update.bat https://mirror.ghproxy.com/https://github.com/SmallMushroom-offical/MineOptimiz-Updater/releases/download/v1.0.5/Update.bat
+.\guirequired\Update\aria2\aria2c.exe -o .\config\fancymenu\assets\Update\update-dev.sh https://mirror.ghproxy.com/https://github.com/SmallMushroom-offical/MineOptimiz-Updater/releases/download/v1.0.6(OptiFabric-1.19.4)/update-dev.sh
+.\guirequired\Update\aria2\aria2c.exe -o .\config\fancymenu\assets\Update\update-stable.sh https://mirror.ghproxy.com/https://github.com/SmallMushroom-offical/MineOptimiz-Updater/releases/download/v1.0.6(OptiFabric-1.19.4)/update-stable.sh
+.\guirequired\Update\aria2\aria2c.exe -o .\Update.sh https://mirror.ghproxy.com/https://github.com/SmallMushroom-offical/MineOptimiz-Updater/releases/download/v1.0.6(OptiFabric-1.19.4)/Update.sh
+.\guirequired\Update\aria2\aria2c.exe -o .\Update.bat https://mirror.ghproxy.com/https://github.com/SmallMushroom-offical/MineOptimiz-Updater/releases/download/v1.0.6(OptiFabric-1.19.4)/Update.bat
 rem 这一段是重新下载一遍Updater，建议在修改时删除
 if errorlevel 1 (
   echo 下载失败！
