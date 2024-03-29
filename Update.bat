@@ -31,7 +31,7 @@ if errorlevel 1 (
 echo 解压完成
 echo 正在删除旧的文件
 set "MOD=.\mods"
-powershell -Command "Get-ChildItem -Path '%MOD%' -Exclude 'exordium*.jar', 'entityculling*.jar', 'fancymenu*.jar', 'notenoughanimations*.jar', 'viafabricplus*.jar', 'voicechat*.jar', 'skinlayers3d*.jar' -Recurse | Remove-Item -Force -Recurse"
+powershell -Command "Get-ChildItem -Path '%MOD%' -Exclude 'exordium*.jar', 'entityculling*.jar', 'fancymenu*.jar', 'notenoughanimations*.jar', 'viafabricplus*.jar', 'voicechat*.jar', 'skinlayers3d*.jar', 'OptiFine*.jar' -Recurse | Remove-Item -Force -Recurse"
 rd /s /q config
 rd /s /q CustomSkinLoader
 rd /s /q mods
