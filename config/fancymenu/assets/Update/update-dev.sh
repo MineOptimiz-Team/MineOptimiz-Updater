@@ -19,13 +19,7 @@ cp -r "./Update/overrides/config" ./ || exit 1
 cp -r "./Update/overrides/CustomSkinLoader" ./ || exit 1
 cp -r "./Update/overrides/mods" ./ || exit 1
 cp -r "./Update/overrides/resourcepacks" ./ || exit 1
-echo "正在下载非内置的组件"
-wget https://mirror.ghproxy.com/https://github.com/SmallMushroom-offical/MineOptimiz-Updater/releases/download/v1.0.5/update-dev.sh -O ./config/fancymenu/assets/Update/update-dev.sh
-wget https://mirror.ghproxy.com/https://github.com/SmallMushroom-offical/MineOptimiz-Updater/releases/download/v1.0.5/update-stable.sh -O ./config/fancymenu/assets/Update/update-stable.sh
-wget https://mirror.ghproxy.com/https://github.com/SmallMushroom-offical/MineOptimiz-Updater/releases/download/v1.0.5/Update.sh -O ./Update.sh
-wget https://mirror.ghproxy.com/https://github.com/SmallMushroom-offical/MineOptimiz-Updater/releases/download/v1.0.5/Update.bat -O ./Update.bat
-#这一段是重新下载一遍Updater，建议在修改时删除
-echo "下载完成"
+echo "复制完成"
 echo "正在删除缓存..."
 rm Update.zip || echo "删除失败！下次更新可能会出问题！"
 rm -rf Update || echo "删除失败！下次更新可能会出问题！"
