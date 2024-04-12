@@ -18,7 +18,7 @@ elif [ "$launchupdater" = "3" ]; then
     rm ./Update.ps1
     bash ./Update.sh
 elif [ "$launchupdater" = "4" ]; then
-    rm ./config/fancymenu/assets/Update/PowerShell.AppImage
+    rm ./PowerShell.AppImage
     rm ./Update.ps1
     bash Update.sh
 elif [ "$launchupdater" = "5" ]; then
