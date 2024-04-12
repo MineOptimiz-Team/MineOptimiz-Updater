@@ -1,15 +1,27 @@
 #!/bin/bash
-echo "1.最新稳定版"
-echo "2.最新Dev版"
-echo "3.退出"
-echo "下载服务器在国外，建议使用霍格沃兹环境下载"
-echo "在更新前，请确保系统中存在wget"
-echo "更新后会删除并覆盖模组配置，如果您修改过，请注意备份"
-read -p "请输入要更新的版本的编号：" updateversion
-if [ "$updateversion" = "1" ]; then
-    bash ./config/fancymenu/assets/Update/update-stable.sh
-elif [ "$updateversion" = "2" ]; then
-    bash ./config/fancymenu/assets/Update/update-dev.sh
-elif [ "$updateversion" = "3" ]; then
-    exit 0
+cp ./config/fancymenu/assets/Update/Update.ps1 ./Update.ps1
+echo "MineOptimiz Updater现在已用PowerShell重写"
+echo "1.使用本地安装的PowerShell启动MineOptimiz Updater"
+echo "2.使用便携版PowerShell启动MineOptimiz Updater"
+echo "3.下载便携版PowerShell"
+echo "4.删除便携版PowerShell"
+echo "5.退出"
+read -p "请选择：" launchupdater
+if [ "$launchupdater" = "1" ]; then
+    pwsh ./Update.ps1
+    rm ./Update.ps1
+elif [ "$launchupdater" = "2" ]; then
+    ./PowerShell.AppImage ./Update.ps1
+    rm ./Update.ps1
+elif [ "$launchupdater" = "3" ]; then
+    wget https://gh.ddlc.top/https://github.com/ivan-hc/PowerShell-appimage/releases/download/continuous/PowerShell-v7.4.1-x86_64.AppImage -O ./PowerShell.AppImage
+    rm ./Update.ps1
+    bash ./Update.sh
+elif [ "$launchupdater" = "4" ]; then
+    rm ./config/fancymenu/assets/Update/PowerShell.AppImage
+    rm ./Update.ps1
+    bash Update.sh
+elif [ "$launchupdater" = "5" ]; then
+    rm ./Update.ps1
+    exit
 fi
