@@ -8,6 +8,7 @@ echo 3.退出
 set /p launchupdater=
 if "%launchupdater%"=="1" (
   powershell .\Update.ps1
+  del /s /q Update.ps1
 )
 if "%launchupdater%"=="2" (
   echo 由于MineOptimiz Updater中使用的一些命令无法在PowerShell v5.1以下的版本中运行，因此如果你的系统是win7/8且没有更新，请安装该补丁
@@ -18,9 +19,12 @@ if "%launchupdater%"=="2" (
   echo 如果你的系统是Windows 8.1 x86，请下载Win8.1-KB3191564-x86.msu（注意！32位设备很快就会被淘汰！建议使用64位设备）
   pause
   start https://www.microsoft.com/en-us/download/details.aspx?id=54616
+  del /s /q Update.ps1
   exit
 )
 if "%launchupdater%"=="3" (
   pause
+  del /s /q Update.ps1
   exit
 )
+
