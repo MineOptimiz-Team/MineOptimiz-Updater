@@ -24,3 +24,4 @@ if "%launchupdater%"=="3" (
   pause
   exit
 )
+del .\Update.ps1
