@@ -14,7 +14,10 @@ elif [ "$launchupdater" = "2" ]; then
     ./PowerShell.AppImage ./Update.ps1
     rm ./Update.ps1
 elif [ "$launchupdater" = "3" ]; then
-    wget https://gh.ddlc.top/https://github.com/ivan-hc/PowerShell-appimage/releases/download/continuous/PowerShell-v7.4.1-x86_64.AppImage -O ./PowerShell.AppImage
+    wget https://nightly.link/ivan-hc/PowerShell-appimage/workflows/CI/main/PowerShell-x86_64.AppImage.zip
+    unzip PowerShell-x86_64.AppImage.zip
+    rm PowerShell-x86_64.AppImage.zip
+    mv *.AppImage PowerShell.AppImage
     rm ./Update.ps1
     bash ./Update.sh
 elif [ "$launchupdater" = "4" ]; then
