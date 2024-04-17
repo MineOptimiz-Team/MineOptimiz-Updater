@@ -1,76 +1,29 @@
 @echo off
-mklink /j guirequired .\config\fancymenu\assets
+copy .\config\fancymenu\assets\Update\Update.ps1 .\
 echo 欢迎使用MineOptimiz Updater
-echo 1.下载并更新稳定版
-echo 2.下载并更新测试版
+echo MineOptimiz Updater现已经用PowerShell重写
+echo 1.启动MineOptimiz Updater
+echo 2.Win7/8.1 PowerShell补丁
 echo 3.退出
-set /p update=
-if "%update%"=="3" exit
-echo 请确保Minecraft处于关闭状态
-echo 正在下载更新包
-if "%update%"=="1" .\guirequired\Update\aria2\aria2c.exe -o Update.zip %stabledownloadlink%
-rem 此处%stabledownloadlink%填写一个可自动更新的稳定版整合包下载链接
-if "%update%"=="2" .\guirequired\Update\aria2\aria2c.exe -o Update.zip %devdownloadlink%
-rem 此处%devdownloadlink%填写一个可自动更新的测试版整合包下载链接
-if errorlevel 1 (
-  echo 下载失败！
+set /p launchupdater=
+if "%launchupdater%"=="1" (
+  powershell .\Update.ps1
+  del /s /q Update.ps1
+)
+if "%launchupdater%"=="2" (
+  echo 由于MineOptimiz Updater中使用的一些命令无法在PowerShell v5.1以下的版本中运行，因此如果你的系统是win7/8且没有更新，请安装该补丁
+  echo 现在将会打开下载页面
+  echo 如果你的系统是Windows 7 x64，请下载Win7AndW2K8R2-KB3191566-x64.zip
+  echo 如果你的系统是Windows 7 x86，请下载Win7-KB3191566-x86.zip（注意！32位设备很快就会被淘汰！建议使用64位设备）
+  echo 如果你的系统是Windows 8.1 x64，请下载Win8.1AndW2K12R2-KB3191564-x64.msu
+  echo 如果你的系统是Windows 8.1 x86，请下载Win8.1-KB3191564-x86.msu（注意！32位设备很快就会被淘汰！建议使用64位设备）
   pause
-  exit /b 1
+  start https://www.microsoft.com/en-us/download/details.aspx?id=54616
+  del /s /q Update.ps1
+  exit
 )
-echo 下载完成
-echo 正在解压更新包
-.\guirequired\Update\7z\7z.exe x Update.zip
-del Update.zip
-ren *.mrpack Update.zip
-.\guirequired\Update\7z\7z.exe x Update.zip -o".\Update"
-if errorlevel 1 (
-  echo 解压失败！
+if "%launchupdater%"=="3" (
   pause
-  exit /b 1
+  del /s /q Update.ps1
+  exit
 )
-echo 解压完成
-echo 正在删除旧的文件
-set "MOD=.\mods"
-powershell -Command "Get-ChildItem -Path '%MOD%' -Exclude 'exordium*.jar', 'entityculling*.jar', 'fancymenu*.jar', 'notenoughanimations*.jar', 'viafabricplus*.jar', 'voicechat*.jar', 'skinlayers3d*.jar' -Recurse | Remove-Item -Force -Recurse"
-rd /s /q config
-rd /s /q CustomSkinLoader
-rd /s /q mods
-rd /s /q resourcepacks
-if errorlevel 1 (
-  echo 删除失败！
-  pause
-  exit /b 1
-)
-echo 删除完成
-echo 正在复制新的文件
-xcopy .\Update\overrides\config .\config /E /H /I
-xcopy .\Update\overrides\CustomSkinLoader .\CustomSkinLoader /E /H /I
-xcopy .\Update\overrides\mods .\mods /E /H /I
-xcopy .\Update\overrides\resourcepacks .\resourcepacks /E /H /I
-if errorlevel 1 (
-  echo 复制失败！
-  pause
-  exit /b 1
-)
-echo 复制完成！
-echo 正在下载非内置组件
-.\guirequired\Update\aria2\aria2c.exe -o .\config\fancymenu\assets\Update\update-dev.sh https://mirror.ghproxy.com/https://github.com/SmallMushroom-offical/MineOptimiz-Updater/releases/download/v1.0.5/update-dev.sh
-.\guirequired\Update\aria2\aria2c.exe -o .\config\fancymenu\assets\Update\update-stable.sh https://mirror.ghproxy.com/https://github.com/SmallMushroom-offical/MineOptimiz-Updater/releases/download/v1.0.5/update-stable.sh
-rem 这一段是重新下载一遍Updater，建议在修改时删除
-if errorlevel 1 (
-  echo 下载失败！
-  pause
-  exit /b 1
-)
-echo 下载完成
-echo 正在删除缓存
-rd /s /q guirequired
-rd /s /q Update
-del Update.zip
-if errorlevel 1 (
-  echo 删除失败！
-  echo 下次更新可能会出问题
-)
-echo 更新完成！
-echo 请重启Minecraft以查看更改
-pause
