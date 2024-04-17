@@ -108,6 +108,13 @@ if ($? -eq $false) {
     echo 复制资源包文件夹失败！
 }
 echo "复制完成"
+echo "正在尝试进行更新Updater"
+Copy-Item -Path "./Update/overrides/Update.sh" -Force -Destination "./"
+Copy-Item -Path "./Update/overrides/Update.bat" -Force -Destination "./"
+Copy-Item -Path "./Update/overrides/config/fancymenu/assets/Update/Update.ps1" -Destination "./config/fancymenu/assets/Update/"
+if ($? -eq $false) {
+    echo 更新Updater失败！
+}
 echo "正在删除缓存"
 Remove-Item -Path Update -Recurse -Force
 Remove-Item -Path Update.zip
