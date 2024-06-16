@@ -13,7 +13,7 @@ elif [ "$updateversion" = "2" ]; then
     bash ./config/fancymenu/assets/Update/update-dev.sh
 elif [ "$updateversion" = "3" ]; then
     bash ./config/fancymenu/assets/Update/update-mirror-dev.sh
-elif [ "$updateversion" = "4" || "$updateversion" = "exit" ]; then
+elif [ "$updateversion" = "4" ] || [ "$updateversion" = "exit" ]; then
     exit
 else
     echo "请输入正确的数字！"
