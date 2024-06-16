@@ -12,7 +12,11 @@ elif [ "$checkgit" = "1" ]; then
 fi
 echo "正在克隆镜像仓库..."
 echo "请注意！由于需要克隆整个仓库，需要较大的空间(大约860MB左右)容纳临时文件！"
-git clone mirror.git
+mirrorname=mirrorname1
+mirrorowner=owner1
+gitwebsite=examplewebsite
+mirrorwebsite=https://$gitwebsite/$mirrorname/$mirrorowner
+git clone $mirrorwebsite.git
 echo "正在切换到“branch”分支以进行复制"
 cd "mirror"
 git checkout branch
