@@ -1,4 +1,5 @@
 #!/bin/bash
+updaterdir=./config/fancymenu/assets/Update
 echo "1.最新稳定版"
 echo "2.最新测试版"
 echo "3.最新测试版(gitee镜像)"
@@ -8,11 +9,16 @@ echo "在更新前，请确保系统中存在wget"
 echo "更新后会删除并覆盖模组配置，如果您修改过，请注意备份"
 read -p "请输入要更新的版本的编号：" updateversion
 if [ "$updateversion" = "1" ]; then
-    bash ./config/fancymenu/assets/Update/update-stable.sh
+    cp $updaterdir/update-stable.sh
+    bash ./update-stable.sh
+    rm ./update-stable.sh
 elif [ "$updateversion" = "2" ]; then
-    bash ./config/fancymenu/assets/Update/update-dev.sh
+    cp $updaterdir/update-dev.sh ./update-dev.sh
+    rm ./update-dev.sh
 elif [ "$updateversion" = "3" ]; then
-    bash ./config/fancymenu/assets/Update/update-mirror-dev.sh
+    cp $updaterdir/update-mirror-dev.sh ./update-mirror-dev.sh
+    bash ./update-mirror-dev.sh
+    rm ./update-mirror-dev.sh
 elif [ "$updateversion" = "4" ] || [ "$updateversion" = "exit" ]; then
     exit
 else
