@@ -24,4 +24,5 @@ echo "正在删除缓存..."
 rm Update.zip || echo "删除失败！下次更新可能会出问题！"
 rm -rf Update || echo "删除失败！下次更新可能会出问题！"
 echo "更新完成"
+read -p "请按回车键退出" finish
 exit
