@@ -15,7 +15,7 @@ echo "请注意！由于需要克隆整个仓库，需要较大的空间(大约8
 mirrorname=mirrorname1
 mirrorowner=owner1
 gitwebsite=examplewebsite
-mirrorwebsite=https://$gitwebsite/$mirrorname/$mirrorowner
+mirrorwebsite=https://$gitwebsite/$mirrorowner/$mirrorname
 git clone $mirrorwebsite.git
 echo "正在切换到“branch”分支以进行复制"
 cd $mirrorname
