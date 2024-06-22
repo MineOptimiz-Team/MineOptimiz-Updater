@@ -16,9 +16,11 @@ elif [ "$updateversion" = "2" ]; then
     cp $updaterdir/update-dev.sh ./update-dev.sh
     rm ./update-dev.sh
 elif [ "$updateversion" = "3" ]; then
-    cp $updaterdir/update-mirror-dev.sh ./update-mirror-dev.sh
-    bash ./update-mirror-dev.sh
-    rm ./update-mirror-dev.sh
+    mkdir updaterbackup
+    cp $updaterdir/* ./updaterbackup/
+    bash ./updaterbackup/update-mirror-dev.sh
+    mv ./updaterbackup/* $updaterdir/
+    rmdir ./updaterbackup
 elif [ "$updateversion" = "4" ] || [ "$updateversion" = "exit" ]; then
     exit
 else
