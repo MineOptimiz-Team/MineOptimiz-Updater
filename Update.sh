@@ -1,5 +1,7 @@
 #!/bin/bash
 updatedir=$updatedir/config/fancymenu/assets/Update
+mkdir ./updaterbackup
+cp $updaterdir/* ./updaterbackup/
 echo "1.最新稳定版"
 echo "2.最新测试版"
 echo "3.最新测试版(gitee镜像)"
@@ -23,3 +25,5 @@ else
     echo "请输入正确的数字！"
     exit 1
 fi
+mv ./updaterbackup/* $updatedir/
+rmdir ./updaterbackup
