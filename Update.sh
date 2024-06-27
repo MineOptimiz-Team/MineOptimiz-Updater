@@ -1,5 +1,5 @@
 #!/bin/bash
-updatedir=$updatedir/config/fancymenu/assets/Update
+updatedir=./config/fancymenu/assets/Update
 mkdir ./updaterbackup
 cp $updaterdir/* ./updaterbackup/
 echo "1.最新稳定版"
