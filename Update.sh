@@ -1,7 +1,5 @@
 #!/bin/bash
-modpackdir=./overrides
-configdir=$modpackdir/config
-updatedir=$configdir/fancymenu/assets/Update
+updatedir=./config/fancymenu/assets/Update
 echo "1.最新稳定版"
 echo "2.最新测试版"
 echo "3.最新测试版(gitee镜像)"
