@@ -15,6 +15,7 @@ if [ "$updateversion" = "1" ]; then
     rm ./update-stable.sh
 elif [ "$updateversion" = "2" ]; then
     cp $updaterdir/update-dev.sh ./update-dev.sh
+    bash ./update-dev.sh
     rm ./update-dev.sh
 elif [ "$updateversion" = "3" ]; then
     mkdir updaterbackup
@@ -24,6 +25,7 @@ elif [ "$updateversion" = "3" ]; then
     rmdir ./updaterbackup
 elif [ "$updateversion" = "4" ]; then
     cp $updaterdir/update-mirror-ghproxy-dev.sh ./update-mirror-ghproxy-dev.sh
+    bash ./update-mirror-ghproxy-dev.sh
     rm ./update-mirror-ghproxy-dev.sh
 elif [ "$updateversion" = "5" ] || [ "$updateversion" = "exit" ]; then
     exit
