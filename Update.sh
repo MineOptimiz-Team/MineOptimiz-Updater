@@ -10,19 +10,9 @@ echo "在更新前，请确保系统中存在wget"
 echo "更新后会删除并覆盖模组配置，如果您修改过，请注意备份"
 read -p "请输入要更新的版本的编号：" updateversion
 if [ "$updateversion" = "1" ]; then
-    mkdir updaterbackup
-    cp -r $updatedir/* ./updaterbackup
     bash $updatedir/update-stable.sh
-    mkdir -p $updatedir
-    mv ./updaterbackup/* $updatedir/
-    rmdir ./updaterbackup
 elif [ "$updateversion" = "2" ]; then
-    mkdir updaterbackup
-    cp -r $updatedir/* ./updaterbackup
     bash $updatedir/update-dev.sh
-    mkdir -p $updatedir
-    mv ./updaterbackup/* $updatedir/
-    rmdir ./updaterbackup
 elif [ "$updateversion" = "3" ]; then
     mkdir updaterbackup
     cp -r $updatedir/* ./updaterbackup
