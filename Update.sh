@@ -13,22 +13,30 @@ if [ "$updateversion" = "1" ]; then
     mkdir updaterbackup
     cp -r $updatedir/* ./updaterbackup
     bash $updatedir/update-stable.sh
+    mkdir -p $updatedir
     mv ./updaterbackup/* $updatedir/
+    rmdir ./updaterbackup
 elif [ "$updateversion" = "2" ]; then
     mkdir updaterbackup
     cp -r $updatedir/* ./updaterbackup
     bash $updatedir/update-dev.sh
+    mkdir -p $updatedir
     mv ./updaterbackup/* $updatedir/
+    rmdir ./updaterbackup
 elif [ "$updateversion" = "3" ]; then
     mkdir updaterbackup
     cp -r $updatedir/* ./updaterbackup
     bash $updatedir/update-mirror-gitee-dev.sh
+    mkdir -p $updatedir
     mv ./updaterbackup/* $updatedir/
+    rmdir ./updaterbackup
 elif [ "$updateversion" = "4" ]; then
     mkdir updaterbackup
     cp -r $updatedir/* ./updaterbackup
     bash $updatedir/update-mirror-ghproxy-dev.sh
+    mkdir -p $updatedir
     mv ./updaterbackup/* $updatedir/
+    rmdir ./updaterbackup
 elif [ "$updateversion" = "5" ] || [ "$updateversion" = "exit" ]; then
     exit
 else
