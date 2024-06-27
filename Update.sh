@@ -10,7 +10,7 @@ echo "在更新前，请确保系统中存在wget"
 echo "更新后会删除并覆盖模组配置，如果您修改过，请注意备份"
 read -p "请输入要更新的版本的编号：" updateversion
 if [ "$updateversion" = "1" ]; then
-    cp $updaterdir/update-stable.sh
+    cp $updatedir/update-stable.sh ./update-stable.sh
     bash ./update-stable.sh
     rm ./update-stable.sh
     echo "正在更新Updater"
@@ -19,7 +19,7 @@ if [ "$updateversion" = "1" ]; then
     wget "https://raw.githubusercontent.com/MineOptimiz-Team/MineOptimiz-Updater/master/config/fancymenu/assets/Update/update-mirror-gitee-dev.sh" -O "$updatedir/update-mirror-gitee-dev.sh"
     wget "https://raw.githubusercontent.com/MineOptimiz-Team/MineOptimiz-Updater/master/config/fancymenu/assets/Update/update-mirror-ghproxy-dev.sh" -O "$updatedir/update-mirror-ghproxy-dev.sh"
 elif [ "$updateversion" = "2" ]; then
-    cp $updaterdir/update-dev.sh ./update-dev.sh
+    cp $updatedir/update-dev.sh ./update-dev.sh
     bash ./update-dev.sh
     rm ./update-dev.sh
     echo "正在更新Updater"
@@ -28,7 +28,7 @@ elif [ "$updateversion" = "2" ]; then
     wget "https://raw.githubusercontent.com/MineOptimiz-Team/MineOptimiz-Updater/master/config/fancymenu/assets/Update/update-mirror-gitee-dev.sh" -O "$updatedir/update-mirror-gitee-dev.sh"
     wget "https://raw.githubusercontent.com/MineOptimiz-Team/MineOptimiz-Updater/master/config/fancymenu/assets/Update/update-mirror-ghproxy-dev.sh" -O "$updatedir/update-mirror-ghproxy-dev.sh"
 elif [ "$updateversion" = "3" ]; then
-    cp $updatedir/update-mirror-gitee-dev.sh
+    cp $updatedir/update-mirror-gitee-dev.sh ./update-mirror-gitee-dev.sh
     bash ./update-mirror-gitee-dev.sh
     rm ./update-mirror-gitee-dev.sh
     echo "正在更新Updater"
@@ -37,7 +37,7 @@ elif [ "$updateversion" = "3" ]; then
     wget "https://raw.githubusercontent.com/MineOptimiz-Team/MineOptimiz-Updater/master/config/fancymenu/assets/Update/update-mirror-gitee-dev.sh" -O "$updatedir/update-mirror-gitee-dev.sh"
     wget "https://raw.githubusercontent.com/MineOptimiz-Team/MineOptimiz-Updater/master/config/fancymenu/assets/Update/update-mirror-ghproxy-dev.sh" -O "$updatedir/update-mirror-ghproxy-dev.sh"
 elif [ "$updateversion" = "4" ]; then
-    cp $updaterdir/update-mirror-ghproxy-dev.sh ./update-mirror-ghproxy-dev.sh
+    cp $updatedir/update-mirror-ghproxy-dev.sh ./update-mirror-ghproxy-dev.sh
     bash ./update-mirror-ghproxy-dev.sh
     rm ./update-mirror-ghproxy-dev.sh
     echo "正在更新Updater"
