@@ -24,7 +24,7 @@ cd ..
 echo "正在删除旧版本文件..."
 rm -rf ./config
 rm -rf ./CustomSkinLoader
-find ./mods -type f ! -name "exordium*" ! -name "entityculling*" ! -name "fancymenu*" ! -name "notenoughanimations*" ! -name "viafabricplus*" ! -name "voicechat*" ! -name "skinlayers3d*" ! -name "OptiFine*" ! -name "modpack-update-checker*" ! -name "zume*" -exec rm -f {} +
+find ./mods -type f ! -name "exordium*" ! -name "entityculling*" ! -name "fancymenu*" ! -name "notenoughanimations*" ! -name "viafabricplus*" ! -name "voicechat*" ! -name "skinlayers3d*" ! -name "OptiFine*" ! -name "modpack-update-checker*" ! -name "zume*" ! -name "fmsia*" -exec rm -f {} +
 rm -rf ./resourcepacks
 echo "正在复制新的文件..."
 cp -r "./$mirrorname/overrides/config" ./ || exit 1
