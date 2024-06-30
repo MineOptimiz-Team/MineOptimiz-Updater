@@ -13,7 +13,15 @@ echo "正在删除旧的文件..."
 rm -rf ./config
 rm -rf ./CustomSkinLoader
 find ./mods -type f ! -name "exordium*" ! -name "entityculling*" ! -name "fancymenu*" ! -name "notenoughanimations*" ! -name "viafabricplus*" ! -name "voicechat*" ! -name "skinlayers3d*" ! -name "OptiFine*" ! -name "modpack-update-checker*" ! -name "zume*" ! -name "fmsia*" -exec rm -f {} +
-rm -rf ./resourcepacks
+read -p "是否删除资源包文件夹？如果您有下载了自己的资源包，请选N，如果没有请选Y :  " removeresourcepacks
+if [ "$removeresourcepacks" = "y" ] || [ "$removeresourcepacks" = "yes" ]; then
+    rm -rf ./resourcepacks
+elif [ "$removeresourcepacks" = "n" ] || [ "$removeresourcepacks" = "no" ];then
+    echo "将不会重置资源包文件夹"
+else
+    echo "请输入正确的选项！"
+    echo "将不会重置资源包文件夹"
+fi
 echo "正在复制新的文件..."
 cp -r "./Update/overrides/config" ./ || exit 1
 cp -r "./Update/overrides/CustomSkinLoader" ./ || exit 1

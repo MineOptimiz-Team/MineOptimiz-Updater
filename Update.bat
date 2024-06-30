@@ -43,7 +43,10 @@ powershell -Command "Get-ChildItem -Path '%MOD%' -Exclude 'exordium*.jar', 'enti
 rd /s /q config
 rd /s /q CustomSkinLoader
 rd /s /q mods
-rd /s /q resourcepacks
+echo 是否删除资源包文件夹？如果您有下载了自己的资源包，请选N，如果没有请选Y
+set /p removeresourcepacks=
+if "%removeresourcepacks%"=="y" rd /s /q resourcepacks
+if "%removeresourcepacks%"=="n" echo 将不会重置资源包文件夹
 if errorlevel 1 (
   echo 删除失败！
   pause
