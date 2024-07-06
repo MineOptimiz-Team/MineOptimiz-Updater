@@ -13,7 +13,7 @@ find ./mods -type f ! -name "exordium*" ! -name "entityculling*" ! -name "fancym
 read -p "是否删除资源包文件夹？如果您有下载了自己的资源包，请选N，如果没有请选Y :  " removeresourcepacks
 if [ "$removeresourcepacks" = "y" ] || [ "$removeresourcepacks" = "yes" ]; then
     rm -rf ./resourcepacks
-elif [ "$removeresourcepacks" = "n" ] || [ "$removeresourcepacks" = "no" ];then
+elif [ "$removeresourcepacks" = "n" ] || [ "$removeresourcepacks" = "no" ]; then
     echo "将不会重置资源包文件夹"
 else
     echo "请输入正确的选项！"
