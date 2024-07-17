@@ -7,6 +7,7 @@ configdir=$modpackdir/config
 updatedir=$configdir/fancymenu/assets/Update
 rm ./Update.bat
 rm ./Update.sh
+rm ./Update.ps1
 rm $updatedir/*
 rm $modsdir/fancymenu*.jar
 rm $modsdir/entityculling*.jar
@@ -32,11 +33,13 @@ sed -i "s~mirrorname1~mirror_of_mineoptimiz~g" $updatedir/update-mirror-gitee-de
 sed -i "s~owner1~jxk370~g" $updatedir/update-mirror-gitee-dev.sh
 sed -i "s~examplewebsite~gitee.com~g" $updatedir/update-mirror-gitee-dev.sh
 sed -i "s~branch~1.20.1-Forge-Dev~g" $updatedir/update-mirror-gitee-dev.sh
+sed -i "s~branch~1.20.1-Forge-Dev~g" $updatedir/update-mirror-ghproxy-dev.sh
 sed -i "s~ghproxymirror~https://mirror.ghproxy.com/https://github.com/MineOptimiz-Team/MineOptimiz-3rd/archive/refs/heads/1.20.1-Forge-Dev.zip~g" $updatedir/update-mirror-ghproxy-dev.sh
 wget https://cdn.modrinth.com/data/i9oIemgf/versions/pfk4Tavr/fmsia_forge_1.0.1_MC_1.20.1.jar -O ./mods/fmsia_forge_1.0.1_MC_1.20.1.jar
 wget https://cdn.modrinth.com/data/o6qsdrrQ/versions/EDf05717/zume-1.0.0.jar -O ./mods/zume-1.0.0.jar
 wget https://cdn.modrinth.com/data/NNAgCjsB/versions/DHBIGCNn/entityculling-forge-1.6.6-mc1.20.1.jar -O ./mods/entityculling-forge-1.6.6-mc1.20.1.jar
 wget https://cdn.modrinth.com/data/zV5r3pPn/versions/qgzIF2oI/skinlayers3d-forge-1.6.6-mc1.20.1.jar -O ./mods/skinlayers3d-forge-1.6.6-mc1.20.1.jar
+wget https://cdn.modrinth.com/data/Wq5SjeWM/versions/P4AHpQ6f/fancymenu_forge_3.2.3_MC_1.20.1.jar -O ./mods/fancymenu_forge_3.2.3_MC_1.20.1.jar 
 echo "修复完成"
 read -p "请按回车键退出" finish
 exit
