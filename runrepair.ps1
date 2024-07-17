@@ -44,7 +44,7 @@ Invoke-WebRequest -Uri "https://cdn.modrinth.com/data/o6qsdrrQ/versions/EDf05717
 Invoke-WebRequest -Uri "https://cdn.modrinth.com/data/NNAgCjsB/versions/DHBIGCNn/entityculling-forge-1.6.6-mc1.20.1.jar" -OutFile "$modsdir\entityculling-forge-1.6.6-mc1.20.1.jar"
 Invoke-WebRequest -Uri "https://cdn.modrinth.com/data/zV5r3pPn/versions/qgzIF2oI/skinlayers3d-forge-1.6.6-mc1.20.1.jar" -OutFile "$modsdir\skinlayers3d-forge-1.6.6-mc1.20.1.jar"
 Invoke-WebRequest -Uri "https://cdn.modrinth.com/data/Wq5SjeWM/versions/P4AHpQ6f/fancymenu_forge_3.2.3_MC_1.20.1.jar" -OutFile "$modsdir\fancymenu_forge_3.2.3_MC_1.20.1.jar"
-
+Invoke-WebRequest- Uri "https://cdn.modrinth.com/data/rR4tY6Cw/versions/aJZp3Aoe/modpack-update-checker-1.20.1-forge-0.12.2.jar" -OutFile "$modsdir\modpack-update-checker-1.20.1-forge-0.12.2.jar"
 # 替换字符串
 (Get-Content "$modpackdir\Update.bat") -replace '%stabledownloadlink%', 'https://nightly.link/MineOptimiz-Team/MineOptimiz-3rd/workflows/main/1.20.1-Forge' | Set-Content "$modpackdir\Update.bat"
 (Get-Content "$modpackdir\Update.bat") -replace '%devdownloadlink%', 'https://nightly.link/MineOptimiz-Team/MineOptimiz-3rd/workflows/main/1.20.1-Forge-Dev' | Set-Content "$modpackdir\Update.bat"
