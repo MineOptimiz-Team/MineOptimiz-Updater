@@ -40,6 +40,7 @@ wget https://cdn.modrinth.com/data/o6qsdrrQ/versions/EDf05717/zume-1.0.0.jar -O 
 wget https://cdn.modrinth.com/data/NNAgCjsB/versions/DHBIGCNn/entityculling-forge-1.6.6-mc1.20.1.jar -O ./mods/entityculling-forge-1.6.6-mc1.20.1.jar
 wget https://cdn.modrinth.com/data/zV5r3pPn/versions/qgzIF2oI/skinlayers3d-forge-1.6.6-mc1.20.1.jar -O ./mods/skinlayers3d-forge-1.6.6-mc1.20.1.jar
 wget https://cdn.modrinth.com/data/Wq5SjeWM/versions/P4AHpQ6f/fancymenu_forge_3.2.3_MC_1.20.1.jar -O ./mods/fancymenu_forge_3.2.3_MC_1.20.1.jar 
+wget https://cdn.modrinth.com/data/rR4tY6Cw/versions/aJZp3Aoe/modpack-update-checker-1.20.1-forge-0.12.2.jar -O ./mods/modpack-update-checker-1.20.1-forge-0.12.2.jar
 echo "修复完成"
 read -p "请按回车键退出" finish
 exit
