@@ -1,31 +1,25 @@
-# PowerShell è„šæœ¬å¼€å§‹
-Write-Host "æ­£åœ¨ä¿®å¤æ•´åˆåŒ…"
+# PowerShell ½Å±¾¿ªÊ¼
+Write-Host "ÕıÔÚĞŞ¸´ÕûºÏ°ü"
 
-# åˆ›å»ºç›®å½•
-if (-Not (Test-Path "./config/fancymenu/assets/Update/")) {
-    New-Item -ItemType Directory -Force -Path "./config/fancymenu/assets/Update/"
-}
+# ¶¨Òå±äÁ¿
+$modsdir = ".\mods"
+$configdir = ".\config"
+$updatedir = "$configdir\fancymenu\assets\Update"
 
-# å®šä¹‰å˜é‡
-$modpackdir = "./"
-$modsdir = "$modpackdir/mods"
-$configdir = "$modpackdir/config"
-$updatedir = "$configdir/fancymenu/assets/Update"
-
-# åˆ é™¤æ–‡ä»¶
+# É¾³ıÎÄ¼ş
 Remove-Item -Path "./Update.bat", "./Update.sh", "./Update.ps1" -Force
 Remove-Item -Path "$updatedir/*" -Recurse -Force
 Remove-Item -Path "$modsdir/fancymenu*.jar", "$modsdir/entityculling*.jar", "$modsdir/skinlayers3d*.jar" -Force
 
-# ä¸‹è½½æ–‡ä»¶
-Invoke-WebRequest -Uri "https://mirror.ghproxy.com/raw.githubusercontent.com/MineOptimiz-Team/MineOptimiz-Updater/master/Update.bat" -OutFile "$modpackdir\Update.bat"
-Invoke-WebRequest -Uri "https://mirror.ghproxy.com/raw.githubusercontent.com/MineOptimiz-Team/MineOptimiz-Updater/master/Update.sh" -OutFile "$modpackdir\Update.sh"
+# ÏÂÔØÎÄ¼ş
+Invoke-WebRequest -Uri "https://mirror.ghproxy.com/raw.githubusercontent.com/MineOptimiz-Team/MineOptimiz-Updater/master/Update.bat" -OutFile ".\Update.bat"
+Invoke-WebRequest -Uri "https://mirror.ghproxy.com/raw.githubusercontent.com/MineOptimiz-Team/MineOptimiz-Updater/master/Update.sh" -OutFile ".\Update.sh"
 Invoke-WebRequest -Uri "https://mirror.ghproxy.com/raw.githubusercontent.com/MineOptimiz-Team/MineOptimiz-Updater/master/config/fancymenu/assets/Update/update-dev.sh" -OutFile "$updatedir\update-dev.sh"
 Invoke-WebRequest -Uri "https://mirror.ghproxy.com/raw.githubusercontent.com/MineOptimiz-Team/MineOptimiz-Updater/master/config/fancymenu/assets/Update/update-stable.sh" -OutFile "$updatedir\update-stable.sh"
 Invoke-WebRequest -Uri "https://mirror.ghproxy.com/raw.githubusercontent.com/MineOptimiz-Team/MineOptimiz-Updater/master/config/fancymenu/assets/Update/update-mirror-gitee-dev.sh" -OutFile "$updatedir\update-mirror-gitee-dev.sh"
 Invoke-WebRequest -Uri "https://mirror.ghproxy.com/raw.githubusercontent.com/MineOptimiz-Team/MineOptimiz-Updater/master/config/fancymenu/assets/Update/update-mirror-ghproxy-dev.sh" -OutFile "$updatedir\update-mirror-ghproxy-dev.sh"
 
-# åˆ›å»º7zå’Œaria2ç›®å½•
+# ´´½¨7zºÍaria2Ä¿Â¼
 if (-Not (Test-Path "$updatedir\7z")) {
     New-Item -ItemType Directory -Force -Path "$updatedir\7z"
 }
@@ -33,23 +27,23 @@ if (-Not (Test-Path "$updatedir\aria2")) {
     New-Item -ItemType Directory -Force -Path "$updatedir\aria2"
 }
 
-# ä¸‹è½½7zå’Œaria2æ–‡ä»¶
+# ÏÂÔØ7zºÍaria2ÎÄ¼ş
 Invoke-WebRequest -Uri "https://mirror.ghproxy.com/raw.githubusercontent.com/MineOptimiz-Team/MineOptimiz-Updater/master/config/fancymenu/assets/Update/7z/7z.dll" -OutFile "$updatedir\7z\7z.dll"
 Invoke-WebRequest -Uri "https://mirror.ghproxy.com/raw.githubusercontent.com/MineOptimiz-Team/MineOptimiz-Updater/master/config/fancymenu/assets/Update/7z/7z.exe" -OutFile "$updatedir\7z\7z.exe"
 Invoke-WebRequest -Uri "https://mirror.ghproxy.com/raw.githubusercontent.com/MineOptimiz-Team/MineOptimiz-Updater/master/config/fancymenu/assets/Update/aria2/aria2c.exe" -OutFile "$updatedir\aria2\aria2c.exe"
 
-# ä¸‹è½½modæ–‡ä»¶
+# ÏÂÔØmodÎÄ¼ş
 Invoke-WebRequest -Uri "https://cdn.modrinth.com/data/i9oIemgf/versions/pfk4Tavr/fmsia_forge_1.0.1_MC_1.20.1.jar" -OutFile "$modsdir\fmsia_forge_1.0.1_MC_1.20.1.jar"
 Invoke-WebRequest -Uri "https://cdn.modrinth.com/data/o6qsdrrQ/versions/EDf05717/zume-1.0.0.jar" -OutFile "$modsdir\zume-1.0.0.jar"
 Invoke-WebRequest -Uri "https://cdn.modrinth.com/data/NNAgCjsB/versions/DHBIGCNn/entityculling-forge-1.6.6-mc1.20.1.jar" -OutFile "$modsdir\entityculling-forge-1.6.6-mc1.20.1.jar"
 Invoke-WebRequest -Uri "https://cdn.modrinth.com/data/zV5r3pPn/versions/qgzIF2oI/skinlayers3d-forge-1.6.6-mc1.20.1.jar" -OutFile "$modsdir\skinlayers3d-forge-1.6.6-mc1.20.1.jar"
 Invoke-WebRequest -Uri "https://cdn.modrinth.com/data/Wq5SjeWM/versions/P4AHpQ6f/fancymenu_forge_3.2.3_MC_1.20.1.jar" -OutFile "$modsdir\fancymenu_forge_3.2.3_MC_1.20.1.jar"
-Invoke-WebRequest- Uri "https://cdn.modrinth.com/data/rR4tY6Cw/versions/aJZp3Aoe/modpack-update-checker-1.20.1-forge-0.12.2.jar" -OutFile "$modsdir\modpack-update-checker-1.20.1-forge-0.12.2.jar"
-# æ›¿æ¢å­—ç¬¦ä¸²
-(Get-Content "$modpackdir\Update.bat") -replace '%stabledownloadlink%', 'https://nightly.link/MineOptimiz-Team/MineOptimiz-3rd/workflows/main/1.20.1-Forge' | Set-Content "$modpackdir\Update.bat"
-(Get-Content "$modpackdir\Update.bat") -replace '%devdownloadlink%', 'https://nightly.link/MineOptimiz-Team/MineOptimiz-3rd/workflows/main/1.20.1-Forge-Dev' | Set-Content "$modpackdir\Update.bat"
-(Get-Content "$modpackdir\Update.bat") -replace 'ghproxymirror', 'https://mirror.ghproxy.com/https://github.com/MineOptimiz-Team/MineOptimiz-3rd/archive/refs/heads/1.20.1-Forge-Dev.zip' | Set-Content "$modpackdir\Update.bat"
-(Get-Content "$modpackdir\Update.bat") -replace 'branch', '1.20.1-Forge-Dev' | Set-Content "$modpackdir\Update.bat"
+Invoke-WebRequest -Uri "https://cdn.modrinth.com/data/rR4tY6Cw/versions/aJZp3Aoe/modpack-update-checker-1.20.1-forge-0.12.2.jar" -OutFile "$modsdir\modpack-update-checker-1.20.1-forge-0.12.2.jar"
+# Ìæ»»×Ö·û´®
+(Get-Content ".\Update.bat") -replace '%stabledownloadlink%', 'https://nightly.link/MineOptimiz-Team/MineOptimiz-3rd/workflows/main/1.20.1-Forge' | Set-Content ".\Update.bat"
+(Get-Content ".\Update.bat") -replace '%devdownloadlink%', 'https://nightly.link/MineOptimiz-Team/MineOptimiz-3rd/workflows/main/1.20.1-Forge-Dev' | Set-Content ".\Update.bat"
+(Get-Content ".\Update.bat") -replace 'ghproxymirror', 'https://mirror.ghproxy.com/https://github.com/MineOptimiz-Team/MineOptimiz-3rd/archive/refs/heads/1.20.1-Forge-Dev.zip' | Set-Content ".\Update.bat"
+(Get-Content ".\Update.bat") -replace 'branch', '1.20.1-Forge-Dev' | Set-Content ".\Update.bat"
 (Get-Content "$updatedir\update-dev.sh") -replace 'devdownloadlink', 'https://nightly.link/MineOptimiz-Team/MineOptimiz-3rd/workflows/main/1.20.1-Forge-Dev' | Set-Content "$updatedir\update-dev.sh"
 (Get-Content "$updatedir\update-stable.sh") -replace 'stabledownloadlink', 'https://nightly.link/MineOptimiz-Team/MineOptimiz-3rd/workflows/main/1.20.1-Forge' | Set-Content "$updatedir\update-stable.sh"
 (Get-Content "$updatedir\update-mirror-gitee-dev.sh") -replace 'mirrorname1', 'mirror_of_mineoptimiz' | Set-Content "$updatedir\update-mirror-gitee-dev.sh"
@@ -59,5 +53,4 @@ Invoke-WebRequest- Uri "https://cdn.modrinth.com/data/rR4tY6Cw/versions/aJZp3Aoe
 (Get-Content "$updatedir\update-mirror-ghproxy-dev.sh") -replace 'branch', '1.20.1-Forge-Dev' | Set-Content "$updatedir\update-mirror-ghproxy-dev.sh"
 (Get-Content "$updatedir\update-mirror-ghproxy-dev.sh") -replace 'ghproxymirror', 'https://mirror.ghproxy.com/https://github.com/MineOptimiz-Team/MineOptimiz-3rd/archive/refs/heads/1.20.1-Forge-Dev.zip' | Set-Content "$updatedir\update-mirror-ghproxy-dev.sh"
 
-Write-Host "ä¿®å¤å®Œæˆ"
-Read-Host "è¯·æŒ‰å›è½¦é”®é€€å‡º"
+Write-Host "ĞŞ¸´Íê³É"
