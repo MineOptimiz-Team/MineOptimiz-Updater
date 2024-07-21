@@ -3,8 +3,9 @@ updatedir=./config/fancymenu/assets/Update
 echo "1.最新稳定版"
 echo "2.最新测试版"
 echo "3.最新测试版(gitee镜像)"
-echo "4.最新测试版(ghproxy镜像)"
-echo "5.退出"
+echo "4.最新稳定版(ghproxy镜像)"
+echo "5.最新测试版(ghproxy镜像)"
+echo "6.退出"
 echo "下载服务器在国外，建议使用霍格沃兹环境下载"
 echo "在更新前，请确保系统中存在wget"
 echo "更新后会删除并覆盖模组配置，如果您修改过，请注意备份"
@@ -23,11 +24,18 @@ elif [ "$updateversion" = "3" ]; then
 elif [ "$updateversion" = "4" ]; then
     mkdir updaterbackup
     cp -r $updatedir/* ./updaterbackup
+    bash $updatedir/update-mirror-ghproxy-stable.sh
+    mkdir -p $updatedir
+    mv ./updaterbackup/* $updatedir/
+    rmdir ./updaterbackup
+elif [ "$updateversion" = "5" ]; then
+    mkdir updaterbackup
+    cp -r $updatedir/* ./updaterbackup
     bash $updatedir/update-mirror-ghproxy-dev.sh
     mkdir -p $updatedir
     mv ./updaterbackup/* $updatedir/
     rmdir ./updaterbackup
-elif [ "$updateversion" = "5" ] || [ "$updateversion" = "exit" ]; then
+elif [ "$updateversion" = "6" ] || [ "$updateversion" = "exit" ]; then
     exit
 else
     echo "请输入正确的数字！"

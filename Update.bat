@@ -3,17 +3,19 @@ mklink /j guirequired .\config\fancymenu\assets
 echo 欢迎使用MineOptimiz Updater
 echo 1.下载并更新至最新稳定版
 echo 2.下载并更新至最新测试版
-echo 3.通过ghproxy镜像下载并更新至最新测试版
-echo 4.退出
+echo 3.通过ghproxy镜像下载并更新至最新稳定版
+echo 4.通过ghproxy镜像下载并更新至最新测试版
+echo 5.退出
 set /p update=
-if "%update%"=="4" exit
+if "%update%"=="5" exit
 echo 请确保Minecraft处于关闭状态
 echo 正在下载更新包
 if "%update%"=="1" .\guirequired\Update\aria2\aria2c.exe -o Update.zip %stabledownloadlink%
 rem 此处%stabledownloadlink%填写一个可自动更新的稳定版整合包下载链接
 if "%update%"=="2" .\guirequired\Update\aria2\aria2c.exe -o Update.zip %devdownloadlink%
 rem 此处%devdownloadlink%填写一个可自动更新的测试版整合包下载链接
-if "%update%"=="3" .\guirequired\Update\aria2\aria2c.exe -o Update.zip ghproxymirror
+if "%update%"=="3" .\guirequired\Update\aria2\aria2c.exe -o Update.zip ghproxymirror-stable
+if "%update%"=="4" .\guirequired\Update\aria2\aria2c.exe -o Update.zip ghproxymirror
 if errorlevel 1 (
   echo 下载失败！
   pause
