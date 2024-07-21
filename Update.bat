@@ -31,6 +31,10 @@ if not "%update%"=="3" (
 )
 if "%update%"=="3" (
   .\guirequired\Update\7z\7z.exe x Update.zip
+  ren MineOptimiz-3rd-branch-stable Update
+)
+if "%update%"=="4" (
+  .\guirequired\Update\7z\7z.exe x Update.zip
   ren MineOptimiz-3rd-branch Update
 )
 if errorlevel 1 (

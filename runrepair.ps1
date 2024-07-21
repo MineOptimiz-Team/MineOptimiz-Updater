@@ -18,6 +18,7 @@ Invoke-WebRequest -Uri "https://mirror.ghproxy.com/raw.githubusercontent.com/Min
 Invoke-WebRequest -Uri "https://mirror.ghproxy.com/raw.githubusercontent.com/MineOptimiz-Team/MineOptimiz-Updater/master/config/fancymenu/assets/Update/update-stable.sh" -OutFile "$updatedir\update-stable.sh"
 Invoke-WebRequest -Uri "https://mirror.ghproxy.com/raw.githubusercontent.com/MineOptimiz-Team/MineOptimiz-Updater/master/config/fancymenu/assets/Update/update-mirror-gitee-dev.sh" -OutFile "$updatedir\update-mirror-gitee-dev.sh"
 Invoke-WebRequest -Uri "https://mirror.ghproxy.com/raw.githubusercontent.com/MineOptimiz-Team/MineOptimiz-Updater/master/config/fancymenu/assets/Update/update-mirror-ghproxy-dev.sh" -OutFile "$updatedir\update-mirror-ghproxy-dev.sh"
+Invoke-WebRequest -Uri "https://mirror.ghproxy.com/raw.githubusercontent.com/MineOptimiz-Team/MineOptimiz-Updater/master/config/fancymenu/assets/Update/update-mirror-ghproxy-stable.sh" -OutFile "$updatedir\update-mirror-ghproxy-stable.sh"
 
 # 创建7z和aria2目录
 if (-Not (Test-Path "$updatedir\7z")) {
@@ -44,6 +45,8 @@ Invoke-WebRequest -Uri "https://cdn.modrinth.com/data/rR4tY6Cw/versions/aJZp3Aoe
 (Get-Content ".\Update.bat") -replace '%devdownloadlink%', 'https://nightly.link/MineOptimiz-Team/MineOptimiz-3rd/workflows/main/1.20.1-Forge-Dev' | Set-Content ".\Update.bat"
 (Get-Content ".\Update.bat") -replace 'ghproxymirror', 'https://mirror.ghproxy.com/https://github.com/MineOptimiz-Team/MineOptimiz-3rd/archive/refs/heads/1.20.1-Forge-Dev.zip' | Set-Content ".\Update.bat"
 (Get-Content ".\Update.bat") -replace 'branch', '1.20.1-Forge-Dev' | Set-Content ".\Update.bat"
+(Get-Content ".\Update.bat") -replace 'ghproxymirror-stable', 'https://mirror.ghproxy.com/https://github.com/MineOptimiz-Team/MineOptimiz-3rd/archive/refs/heads/1.20.1-Forge-Stable.zip' | Set-Content ".\Update.bat"
+(Get-Content ".\Update.bat") -replace 'branch-stable', '1.20.1-Forge-Stable' | Set-Content ".\Update.bat"
 (Get-Content "$updatedir\update-dev.sh") -replace 'devdownloadlink', 'https://nightly.link/MineOptimiz-Team/MineOptimiz-3rd/workflows/main/1.20.1-Forge-Dev' | Set-Content "$updatedir\update-dev.sh"
 (Get-Content "$updatedir\update-stable.sh") -replace 'stabledownloadlink', 'https://nightly.link/MineOptimiz-Team/MineOptimiz-3rd/workflows/main/1.20.1-Forge' | Set-Content "$updatedir\update-stable.sh"
 (Get-Content "$updatedir\update-mirror-gitee-dev.sh") -replace 'mirrorname1', 'mirror_of_mineoptimiz' | Set-Content "$updatedir\update-mirror-gitee-dev.sh"
@@ -52,5 +55,7 @@ Invoke-WebRequest -Uri "https://cdn.modrinth.com/data/rR4tY6Cw/versions/aJZp3Aoe
 (Get-Content "$updatedir\update-mirror-gitee-dev.sh") -replace 'branch', '1.20.1-Forge-Dev' | Set-Content "$updatedir\update-mirror-gitee-dev.sh"
 (Get-Content "$updatedir\update-mirror-ghproxy-dev.sh") -replace 'branch', '1.20.1-Forge-Dev' | Set-Content "$updatedir\update-mirror-ghproxy-dev.sh"
 (Get-Content "$updatedir\update-mirror-ghproxy-dev.sh") -replace 'ghproxymirror', 'https://mirror.ghproxy.com/https://github.com/MineOptimiz-Team/MineOptimiz-3rd/archive/refs/heads/1.20.1-Forge-Dev.zip' | Set-Content "$updatedir\update-mirror-ghproxy-dev.sh"
+(Get-Content "$updatedir\update-mirror-ghproxy-dev.sh") -replace 'branch', '1.20.1-Forge-stable' | Set-Content "$updatedir\update-mirror-ghproxy-stable.sh"
+(Get-Content "$updatedir\update-mirror-ghproxy-dev.sh") -replace 'ghproxymirror-stable', 'https://mirror.ghproxy.com/https://github.com/MineOptimiz-Team/MineOptimiz-3rd/archive/refs/heads/1.20.1-Forge-Stable.zip' | Set-Content "$updatedir\update-mirror-ghproxy-stable.sh"
 
 Write-Host "修复完成"

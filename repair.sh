@@ -12,6 +12,7 @@ rm $updatedir/*
 rm $modsdir/fancymenu*.jar
 rm $modsdir/entityculling*.jar
 rm $modsdir/skinlayers3d*.jar
+wget "https://mirror.ghproxy.com/raw.githubusercontent.com/MineOptimiz-Team/MineOptimiz-Updater/master/config/fancymenu/assets/Update/update-mirror-ghproxy-stable.sh" -O "$updatedir/update-mirror-ghproxy-stable.sh"
 wget "https://mirror.ghproxy.com/raw.githubusercontent.com/MineOptimiz-Team/MineOptimiz-Updater/master/Update.bat" -O "$modpackdir/Update.bat"
 wget "https://mirror.ghproxy.com/raw.githubusercontent.com/MineOptimiz-Team/MineOptimiz-Updater/master/Update.sh" -O "$modpackdir/Update.sh"
 wget "https://mirror.ghproxy.com/raw.githubusercontent.com/MineOptimiz-Team/MineOptimiz-Updater/master/config/fancymenu/assets/Update/update-dev.sh" -O "$updatedir/update-dev.sh"
@@ -26,7 +27,9 @@ wget "https://mirror.ghproxy.com/raw.githubusercontent.com/MineOptimiz-Team/Mine
 sed -i "s~%stabledownloadlink%~https://nightly.link/MineOptimiz-Team/MineOptimiz-3rd/workflows/main/1.20.1-Forge~g" $modpackdir/Update.bat
 sed -i "s~%devdownloadlink%~https://nightly.link/MineOptimiz-Team/MineOptimiz-3rd/workflows/main/1.20.1-Forge-Dev~g" $modpackdir/Update.bat
 sed -i "s~ghproxymirror~https://mirror.ghproxy.com/https://github.com/MineOptimiz-Team/MineOptimiz-3rd/archive/refs/heads/1.20.1-Forge-Dev.zip~g" $modpackdir/Update.bat
+sed -i "s~ghproxymirror-stable~https://mirror.ghproxy.com/https://github.com/MineOptimiz-Team/MineOptimiz-3rd/archive/refs/heads/1.20.1-Forge-Stable.zip~g" $modpackdir/Update.bat
 sed -i "s~branch~1.20.1-Forge-Dev~g" $modpackdir/Update.bat
+sed -i "s~branch-stable~1.20.1-Forge-Stable~g" $modpackdir/Update.bat
 sed -i "s~devdownloadlink~https://nightly.link/MineOptimiz-Team/MineOptimiz-3rd/workflows/main/1.20.1-Forge-Dev~g" $updatedir/update-dev.sh
 sed -i "s~stabledownloadlink~https://nightly.link/MineOptimiz-Team/MineOptimiz-3rd/workflows/main/1.20.1-Forge~g" $updatedir/update-stable.sh
 sed -i "s~mirrorname1~mirror_of_mineoptimiz~g" $updatedir/update-mirror-gitee-dev.sh
@@ -35,6 +38,8 @@ sed -i "s~examplewebsite~gitee.com~g" $updatedir/update-mirror-gitee-dev.sh
 sed -i "s~branch~1.20.1-Forge-Dev~g" $updatedir/update-mirror-gitee-dev.sh
 sed -i "s~branch~1.20.1-Forge-Dev~g" $updatedir/update-mirror-ghproxy-dev.sh
 sed -i "s~ghproxymirror~https://mirror.ghproxy.com/https://github.com/MineOptimiz-Team/MineOptimiz-3rd/archive/refs/heads/1.20.1-Forge-Dev.zip~g" $updatedir/update-mirror-ghproxy-dev.sh
+sed -i "s~ghproxymirror-stable~https://mirror.ghproxy.com/https://github.com/MineOptimiz-Team/MineOptimiz-3rd/archive/refs/heads/1.20.1-Forge-Stable.zip~g" $updatedir/update-mirror-ghproxy-stable.sh
+sed -i "s~branch~1.20.1-Forge-Stable~g" $updatedir/update-mirror-ghproxy-stable.sh
 wget https://cdn.modrinth.com/data/i9oIemgf/versions/pfk4Tavr/fmsia_forge_1.0.1_MC_1.20.1.jar -O ./mods/fmsia_forge_1.0.1_MC_1.20.1.jar
 wget https://cdn.modrinth.com/data/o6qsdrrQ/versions/EDf05717/zume-1.0.0.jar -O ./mods/zume-1.0.0.jar
 wget https://cdn.modrinth.com/data/NNAgCjsB/versions/DHBIGCNn/entityculling-forge-1.6.6-mc1.20.1.jar -O ./mods/entityculling-forge-1.6.6-mc1.20.1.jar
