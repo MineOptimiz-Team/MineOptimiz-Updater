@@ -24,14 +24,14 @@ mkdir -p $updatedir/aria2
 wget "https://mirror.ghproxy.com/raw.githubusercontent.com/MineOptimiz-Team/MineOptimiz-Updater/master/config/fancymenu/assets/Update/7z/7z.dll" -O "$updatedir/7z/7z.dll"
 wget "https://mirror.ghproxy.com/raw.githubusercontent.com/MineOptimiz-Team/MineOptimiz-Updater/master/config/fancymenu/assets/Update/7z/7z.exe" -O "$updatedir/7z/7z.exe"
 wget "https://mirror.ghproxy.com/raw.githubusercontent.com/MineOptimiz-Team/MineOptimiz-Updater/master/config/fancymenu/assets/Update/aria2/aria2c.exe" -O "$updatedir/aria2/aria2c.exe"
-sed -i "s~%stabledownloadlink%~https://nightly.link/MineOptimiz-Team/MineOptimiz-3rd/workflows/main/1.20.1-Forge~g" $modpackdir/Update.bat
+sed -i "s~%stabledownloadlink%~https://nightly.link/MineOptimiz-Team/MineOptimiz-3rd/workflows/main/1.20.1-Forge-Stable~g" $modpackdir/Update.bat
 sed -i "s~%devdownloadlink%~https://nightly.link/MineOptimiz-Team/MineOptimiz-3rd/workflows/main/1.20.1-Forge-Dev~g" $modpackdir/Update.bat
 sed -i "s~ghproxymirror~https://mirror.ghproxy.com/https://github.com/MineOptimiz-Team/MineOptimiz-3rd/archive/refs/heads/1.20.1-Forge-Dev.zip~g" $modpackdir/Update.bat
 sed -i "s~ghproxymirror-stable~https://mirror.ghproxy.com/https://github.com/MineOptimiz-Team/MineOptimiz-3rd/archive/refs/heads/1.20.1-Forge-Stable.zip~g" $modpackdir/Update.bat
 sed -i "s~branch~1.20.1-Forge-Dev~g" $modpackdir/Update.bat
 sed -i "s~branch-stable~1.20.1-Forge-Stable~g" $modpackdir/Update.bat
 sed -i "s~devdownloadlink~https://nightly.link/MineOptimiz-Team/MineOptimiz-3rd/workflows/main/1.20.1-Forge-Dev~g" $updatedir/update-dev.sh
-sed -i "s~stabledownloadlink~https://nightly.link/MineOptimiz-Team/MineOptimiz-3rd/workflows/main/1.20.1-Forge~g" $updatedir/update-stable.sh
+sed -i "s~stabledownloadlink~https://nightly.link/MineOptimiz-Team/MineOptimiz-3rd/workflows/main/1.20.1-Forge-Stable~g" $updatedir/update-stable.sh
 sed -i "s~mirrorname1~mirror_of_mineoptimiz~g" $updatedir/update-mirror-gitee-dev.sh
 sed -i "s~owner1~jxk370~g" $updatedir/update-mirror-gitee-dev.sh
 sed -i "s~examplewebsite~gitee.com~g" $updatedir/update-mirror-gitee-dev.sh
